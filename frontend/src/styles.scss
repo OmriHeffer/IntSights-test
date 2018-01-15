@@ -1,0 +1,24 @@
+@import './_variables.scss';
+
+html, body {
+  height: 100%;
+  font-size: 0.875em;
+}
+
+body {
+  background-color: $body-color;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+main {
+  display: block; // IE11.
+}
+
+app-root {
+  position: absolute;
+  min-height: 100%;
+  height: 894px;
+  min-width: 100%;
+}

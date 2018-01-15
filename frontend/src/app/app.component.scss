@@ -1,0 +1,29 @@
+@import '../_variables.scss';
+
+header {
+  background-color: $header-color;
+  height: 64px;
+  min-width: 1920px;
+
+  @media screen and (max-width: $screen-break) {
+    min-width: unset;
+  }  
+
+  img {
+    margin: 18px 10px;
+  }
+}
+
+main {
+  width: 1589px;
+  background-color: $main-color;
+  height: calc(100% - 64px);
+  box-sizing: border-box;
+  margin-left: 5.5%;
+  padding-top: 5.5%;
+
+  @media screen and (max-width: $screen-break) {
+    margin-left: 0;
+    width: 100%;
+  }  
+}

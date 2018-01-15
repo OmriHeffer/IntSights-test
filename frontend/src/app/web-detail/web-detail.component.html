@@ -1,0 +1,54 @@
+<section class="web-detail">
+  <img [src]="data.image" alt="clear-web">
+  <article class="table types">
+    <header>Types</header>
+    <div class="content">
+      <div class="type" *ngFor="let type of data.types">
+          <img [src]="type.image" alt="type.name">
+          <div class="info">
+            <article>
+              <span>{{ type.value }}</span>
+            </article>
+            <article>
+              <span>{{ type.name }}</span>
+            </article>
+          </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="table severities">
+    <header>Severities</header>
+    <div class="chart-container">
+      <svg height="100%" width="100%" viewBox="0 0 49 7.5">
+          <circle *ngFor="let sev of data.severities; let i=index" cx="50%"
+            cy="3.75" r="7.5" fill="transparent" stroke-width="1"
+            [attr.stroke-dasharray]="getPerimeter(7.5)"
+            [attr.stroke-dashoffset]="getOffset(7.5, i)"
+            [attr.stroke]="getColor(sev.name)"/> 
+      </svg>
+    </div>
+    <div class="severity-list">
+      <div class="severity" *ngFor="let sev of data.severities;">
+        <div>{{ sev.name.toUpperCase() }}</div>
+        <div class="severity-number">{{ sev.value }}</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="table sources">
+    <header>Sources</header>
+    <div class="content">
+      <div class="source" *ngFor="let source of data.sources;">
+        <span>{{source.name.toUpperCase()}}</span>
+        <div class="progress">
+          <div class="progress-bar">
+            <div class="total"></div>
+            <div class="current" [ngStyle]="{'width': source.value + '%'}"></div>
+          </div>
+          <span>{{ source.percent }}</span>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
